@@ -7,6 +7,9 @@ const HTML_TEMPLATE = html(`
             <button id="btn-ingresar">
             Ingresar 
             </button>
+            <button id="btn-theme">
+            Cambiar Tema
+            </button>
     </header>
 `);
 
@@ -19,5 +22,12 @@ export const headerComponent: Component = {
     btnIngresar?.addEventListener("click", () => {
       alert("Ingresar");
     });
+
+    const btntheme =
+      this.template.querySelector<HTMLButtonElement>("#btn-theme")!;
+
+    btntheme.onclick = () => {
+      document.querySelector("html")?.classList.toggle("dark");
+    };
   },
 };
