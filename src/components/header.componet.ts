@@ -1,7 +1,8 @@
 import { html } from "../helpers/html.helper";
 import { Component } from "../interfaces/component.interface";
 
-const HTML_TEMPLATE = html(`
+const template = () =>
+  html(`
     <header>
         Header Works
             <button id="btn-ingresar">
@@ -14,7 +15,7 @@ const HTML_TEMPLATE = html(`
 `);
 
 export const headerComponent: Component = {
-  template: HTML_TEMPLATE,
+  template: template(),
   afterViewInit() {
     const btnIngresar =
       this.template.querySelector<HTMLButtonElement>("#btn-ingresar");
